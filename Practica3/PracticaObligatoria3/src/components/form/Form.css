@@ -1,0 +1,22 @@
+form{
+    padding: 100px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+button{
+    margin: 20px;
+}
+
+p{
+    margin: 0;
+}
