@@ -1,0 +1,11 @@
+form{
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    border-radius: 10px;
+    color: #000;
+    background-color: #8787877b;
+    border: none;
+}
