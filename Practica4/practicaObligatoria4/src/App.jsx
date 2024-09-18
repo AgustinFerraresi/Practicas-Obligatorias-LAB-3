@@ -14,11 +14,19 @@ function App() {
   const handleAddTask = (newTask) => {
     setTasks(prevTasks => [newTask, ...prevTasks]);
   }
+
+  const handleDelete = (deleteTask) => {
+    const tasksFiltered =  tasks.filter(task => task != deleteTask);
+    setTasks(tasksFiltered);
+  }
   
+
+  //        const tasksFiltered = tasks.filter(task => task.key !== key)
+
   return (
     <>
       <NewTask handleAddTask={handleAddTask}/>
-      <List tasks={tasks}/>
+      <List tasks={tasks} handleDelete={handleDelete}/>
     </>
   )
 }

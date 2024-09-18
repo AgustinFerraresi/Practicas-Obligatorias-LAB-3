@@ -3,3 +3,11 @@ td input{
     width: 15px;
 }
 
+td{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+    align-items: center;  
+}
+
+

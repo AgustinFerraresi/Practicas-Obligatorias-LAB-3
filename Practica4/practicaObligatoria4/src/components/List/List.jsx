@@ -4,7 +4,7 @@ import "./List.css"
 
 
 
-const List = ({ tasks }) => {
+const List = ({ tasks ,handleDelete}) => {
 
     const tasksFiltered = tasks.filter(task => task != "")
 
@@ -12,12 +12,13 @@ const List = ({ tasks }) => {
     const tasksFilteredMapped = tasksFiltered.map(task => (
         <Task
         title={task}
+        handleDelete = {handleDelete}
         />
     ));
 
     return (
         <>
-            <Table striped="columns" className="myTable">
+            <Table striped="columns" className="myTable" variant="dark">
                 <thead>
                     <tr>
                         <th>Tareas</th>

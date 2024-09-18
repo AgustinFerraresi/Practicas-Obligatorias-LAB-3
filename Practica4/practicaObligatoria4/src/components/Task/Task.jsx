@@ -1,11 +1,15 @@
 import { useState } from "react";
-
+import Button from 'react-bootstrap/Button';
 import "./Task.css";
 
-const Task = ({title}) => {
 
-    const  [done,setDone] = useState(false);
-    
+const Task = ({title,handleDelete}) => {
+
+    const [done,setDone] = useState(false);
+
+    const handleDeleteTask = () => {
+        handleDelete(title)
+    }
 
     const handleDone = () => {
         if (done) {
@@ -17,9 +21,11 @@ const Task = ({title}) => {
 
     return (
         <>
-            <tr style={{ textDecoration: done ? "line-through" : "none" }}>
+            <tr id={title} >
                 <td>
-                    <span>{title}</span> <input type="checkbox" name="a" checked={done} onChange={handleDone}/>
+                    <input type="checkbox" name="a" checked={done} onChange={handleDone}/>
+                    <span style={{ textDecoration: done ? "line-through" : "none" }}>{title}</span> 
+                    <Button variant="danger" onClick={handleDeleteTask}>Eliminar</Button>
                 </td>
             </tr>
         </>
